@@ -39,9 +39,13 @@
   "devDependencies": {
     "cypress": "^7.5.0",
     "cypress-cucumber-preprocessor": "^2.5.5",
+    "cypress-junit-reporter": "^1.3.1",
     "cypress-multi-reporters": "^1.5.0",
+    "install": "^0.13.0",
     "mocha": "^5.2.0",
+    "mocha-junit-reporter": "^2.0.0",
     "mochawesome": "^4.0.1",
-    "multiple-cucumber-html-reporter": "^1.18.0"
+    "multiple-cucumber-html-reporter": "^1.18.0",
+    "npm": "^7.18.1"
   }
 }
