@@ -1,0 +1,19 @@
+{
+    "reporterEnabled":"mochawesome,cypress-junit-reporter",
+    "mochawesomeReporterOptions":{
+        "reportDir":"cypress/results/json",
+        "overwrite":false,
+        "html":false,
+        "json":true
+    },
+    "cypressJunitReporterReporterOptions":{
+        "mochaFile":"cypress/results/junit/junit-[hash].xml",
+        "testCaseSwitchClassnameAndName":true,
+        "testsuiteTitle": true,
+        "attachments":false,
+        "useFullSuiteTitle": false,
+        "jenkinsMode":true,
+        "outputs":true,
+        "toConsole":true
+    }
+    }

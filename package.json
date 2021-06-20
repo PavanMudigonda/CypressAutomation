@@ -4,11 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules\\.bin\\cypress run",
+    "testrun": "node_modules\\.bin\\cypress run",
     "headTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
     "recordDashBoardTest": "npm run test -- --record --key fa423514-5a84-42a7-b6a0-b5e7191bba12 --reporter mochawesome",
-    "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\""
+    "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\"",
+    "cypress:open:local": "CYPRESS_ENV=localhost npm run cypress:open",
+    "cypress:open:prod": "CYPRESS_ENV=production npm run cypress:open",
+    "cypress:open": "cypress open",
+    "test:local": "CYPRESS_ENV=localhost npm run test",
+    "test:prod": "CYPRESS_ENV=production npm run test",
+    "test": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/**/*.feature'",
+    "test:debug:local": "CYPRESS_ENV=localhost npm run test:debug",
+    "test:debug:prod": "CYPRESS_ENV=production npm run test:debug",
+    "test:debug": "cypress run --headed --browser chrome --env TAGS='@e2e-test' --spec 'cypress/integration/**/*.feature'",
+    "test:pull-features": "git submodule update --remote gherkin-features && cp -rf gherkin-features/* cypress/integration && node ./scripts/remove-old-features.js",
+    "precy:run": "rm -rf cypress/screenshots cypress/results cypress/reports",
+    "e2e": "cypress run --headless --browser chrome",
+    "report": "run-s report:*",
+    "report:merge": "mochawesome-merge ./cypress/results/json/*.json -o cypress/results/mochawesome-bundle.json",
+    "report:generate": "marge cypress/results/mochawesome-bundle.json -o cypress/reports/html"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
@@ -24,6 +39,7 @@
   "devDependencies": {
     "cypress": "^7.5.0",
     "cypress-cucumber-preprocessor": "^2.5.5",
+    "cypress-multi-reporters": "^1.5.0",
     "mocha": "^5.2.0",
     "mochawesome": "^4.0.1",
     "multiple-cucumber-html-reporter": "^1.18.0"

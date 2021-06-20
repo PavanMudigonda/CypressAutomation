@@ -1,2 +1,11 @@
-node_modules
-node_modules
+node_modules/
+cypress/results/
+cypress/results/json
+cypress/results/junit
+cypress/videos/
+cypress/screenshots/
+cypress/videos/examples/
+mochawesome-report
+cypress/reports/
+cypress/results/
+cypress/screenshots/
