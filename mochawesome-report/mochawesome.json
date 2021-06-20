@@ -1,0 +1,102 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-06-20T22:26:15.266Z",
+    "end": "2021-06-20T22:26:42.777Z",
+    "duration": 27511,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "97fa2971-17aa-4467-a7ba-2c2dcf91302d",
+      "title": "",
+      "fullFile": "cypress/integration/GreenKart/Test2.js",
+      "file": "cypress/integration/GreenKart/Test2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "76299be0-eeb9-40a0-9eff-a33fffbe4321",
+          "title": "My Second Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My FirstTest case",
+              "fullTitle": "My Second Test Suite My FirstTest case",
+              "timedOut": null,
+              "duration": 11034,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "console.log(\"starting text\");\ncy.visit(\"https://rahulshettyacademy.com\");\ncy.get('.search-keyword').type('ca');\ncy.wait(2000); //selenium get hit url in browser, cypress get acts like findElement of selenium\n//Parent child chaining\ncy.get('.products').as('productLocator');\ncy.get('@productLocator').find('.product').each(function ($el, index, $list) {\n  var textVeg = $el.find('h4.product-name').text();\n  if (textVeg.includes('Cashews')) {\n    $el.find('button').click();\n  }\n});\ncy.get('.cart-icon > img').click();\ncy.contains('PROCEED TO CHECKOUT').click(); //cy.contains('Place Order').click()\n//fixture",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `.search-keyword`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `.search-keyword`, but never found it.\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress/integration/GreenKart/Test2.js:9:8)",
+                "diff": null
+              },
+              "uuid": "7ef63344-da92-4d15-b6c3-7efdf34fd041",
+              "parentUUID": "76299be0-eeb9-40a0-9eff-a33fffbe4321",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7ef63344-da92-4d15-b6c3-7efdf34fd041"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11034,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "useInlineDiffs": false
+      },
+      "version": "4.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "4.0.1"
+    }
+  }
+}
